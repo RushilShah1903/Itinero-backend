@@ -6,5 +6,6 @@ const router = express.Router();
 
 router.get('/', protect, isAdmin, getDashboardData);
 router.get('/all-requests', protect, isAdmin, getAllTravelRequests);
+// router.get('/employee-expenses', getEmployeeExpenses);
 
 export default router;
