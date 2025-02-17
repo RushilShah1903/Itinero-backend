@@ -46,3 +46,34 @@ export const getAllTravelRequests = async (req, res) => {
     res.status(500).json({ message: 'Server error', error: error.message });
   }
 };
+
+// import TravelRequest from '../models/travelRequest.model.js';
+
+// export const getEmployeeExpenses = async (req, res) => {
+//   try {
+//     const employeeExpenses = await TravelRequest.aggregate([
+//       {
+//         $match: { status: 'Approved' } // Only count approved expenses
+//       },
+//       {
+//         $group: {
+//           _id: '$user', // Group by employee (user ID)
+//           totalExpense: { $sum: '$expense' },
+//           userName: { $first: '$userName' } // Get employee name
+//         }
+//       },
+//       {
+//         $sort: { totalExpense: -1 } // Sort by highest spenders
+//       }
+//     ]);
+
+//     if (!employeeExpenses.length) {
+//       return res.status(404).json({ message: 'No approved expenses found' });
+//     }
+
+//     res.json(employeeExpenses);
+//   } catch (error) {
+//     console.error('Error fetching employee expenses:', error);
+//     res.status(500).json({ message: 'Server error', error: error.message });
+//   }
+// };
